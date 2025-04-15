@@ -6,14 +6,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-//Vid 150,Paso 1 de entity es de clase de persitencia mapeada a la base de datos
+//V-150,Paso 1, entity es de clase de persitencia mapeada a la base de datos.
 @Entity
-// La tabla de nuestra base de datos
+// La tabla de nuestra base de datos se llama "products"
 @Table(name = "products")
 public class Product {
 
     @Id
-    // para que se genere un id automatico identity para mysql
+    // para que se genere un id automático identity para mysql
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     // Toda clase Entity tiene que tener un id ,una llave primaria
     private Long id;
@@ -23,6 +23,8 @@ public class Product {
     private String description;
 
     private Long price;
+
+    // -------------------------------- Getters and setters
 
     public Long getId() {
         return id;

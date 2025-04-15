@@ -10,22 +10,25 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pjff.backend.cartapp.backend_cartapp.models.Product;
 import com.pjff.backend.cartapp.backend_cartapp.services.ProductService;
 
-//Paso 5,@RestController, nos va a devolver u json o xml datos y esta compuesta por 2
-// cosas 
+//@RestController, nos va a devolver un JSON o xml datos y esta compuesta por estas 2 cosas 
 @RestController
-// Vid 176, para evitar el error de core al conectar el bakcend con la app.
+/*
+ * Vid 176, para evitar el error de core al conectar el backendd con la app de
+ * React
+ */
 @CrossOrigin(origins = "http://localhost:5173")
+// Paso 9, creamos el ProductController
 public class ProductController {
 
-    // Inyectamos por necesitamos el Product service
+    // Inyectamos porque necesitamos el ProductService
     @Autowired
     private ProductService service;
 
-    // get ponemos la ruta para recuperar los datos
+    // Con GetMapping ponemos la ruta para recuperar los datos de los productos
     @GetMapping("/products")
     // devuelve una lista
     public List<Product> list() {
-        // devuelve la lista de productos y lo convierte a json
+        // devuelve la lista de productos y lo convierte a JSON
         return service.findAll();
     }
 }
