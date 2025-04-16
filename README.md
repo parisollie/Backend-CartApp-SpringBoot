@@ -4,9 +4,9 @@
 
 This application contains the following knowledge:
 
-- DATABASES
+- Dadatabase Mysql
 
-- Repsotories
+- Repositories
 
 - Storage
 
